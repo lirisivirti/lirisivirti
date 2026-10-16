@@ -1,0 +1,174 @@
+halo <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>المحمية الخضراء</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f8e9;
+  margin: 0;
+  text-align: center;
+  color: #234d20;
+}
+
+header {
+  background: #1b5e20;
+  color: white;
+  padding: 35px 15px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+nav {
+  background: #388e3c;
+  padding: 15px;
+}
+
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 25px;
+}
+
+.card {
+  background: white;
+  margin: 15px auto;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  box-shadow: 0 2px 8px #cccccc;
+}
+
+input {
+  padding: 12px;
+  width: 80%;
+  max-width: 400px;
+  border: 1px solid green;
+  border-radius: 8px;
+}
+
+footer {
+  background: #1b5e20;
+  color: white;
+  padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🌿 المحمية الخضراء 🌿</h1>
+<h2>Al Mahmiya Al Khadra</h2>
+<p>موسوعة الأعشاب والنباتات الطبية</p>
+<p>إشراف: صالحي عمار</p>
+</header>
+
+<nav>
+<a href="#home">الرئيسية</a>
+<a href="#plants">النباتات</a>
+<a href="#about">من نحن</a>
+</nav>
+
+<section id="home">
+<h2>مرحباً بكم في المحمية الخضراء</h2>
+<p>
+منصة علمية للتعريف بالنباتات
+والأعشاب الطبية وتصنيفها.
+</p>
+</section>
+
+<section id="plants">
+
+<h2>🌱 موسوعة النباتات الطبية</h2>
+
+<input
+type="text"
+id="search"
+placeholder="ابحث عن نبات..."
+onkeyup="searchPlants()"
+>
+
+<div id="plantList">
+
+<div class="card">
+<h3>إكليل الجبل</h3>
+<p>الاسم العلمي: Salvia rosmarinus</p>
+<p>الاسم اللاتيني: Rosmarinus officinalis (مرادف)</p>
+<p>الاسم الدارج: الروزماري، أزير</p>
+<p>الاسم الأمازيغي: أزير</p>
+</div>
+
+<div class="card">
+<h3>الزعتر الشائع</h3>
+<p>الاسم العلمي: Thymus vulgaris</p>
+<p>الاسم الدارج: الزعتر</p>
+<p>الاسم الأمازيغي: يختلف حسب المنطقة</p>
+</div>
+
+<div class="card">
+<h3>النعناع الفلفلي</h3>
+<p>الاسم العلمي: Mentha × piperita</p>
+<p>الاسم الدارج: النعناع الفلفلي</p>
+<p>الاسم الأمازيغي: يختلف حسب المنطقة</p>
+</div>
+
+<div class="card">
+<h3>البابونج الألماني</h3>
+<p>الاسم العلمي: Matricaria chamomilla</p>
+<p>الاسم الدارج: البابونج</p>
+<p>الاسم الأمازيغي: يختلف حسب المنطقة</p>
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<h2>🌍 من نحن</h2>
+<p>
+المحمية الخضراء مشروع يهدف
+إلى دراسة وتصنيف النباتات
+والأعشاب الطبية والمحافظة
+على المعرفة النباتية.
+</p>
+<p>
+المؤسس: صالحي عمار
+</p>
+</section>
+
+<footer>
+<p>© 2026 المحمية الخضراء</p>
+<p>جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+function searchPlants() {
+  let input = document.getElementById("search");
+  let filter = input.value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(function(card) {
+    let text = card.textContent.toLowerCase();
+
+    if (text.includes(filter)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
